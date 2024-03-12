@@ -1,0 +1,1 @@
+# Open src/index.html file in your browser, in order to see the result of the project.
