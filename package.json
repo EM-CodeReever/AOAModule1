@@ -5,12 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "execute" : "npx tsc && node ./output/Sorts.js"
+    "execute": "npx tsc && node ./output/Sorts.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "^5.4.2"
-  }
+  "license": "ISC"
 }
