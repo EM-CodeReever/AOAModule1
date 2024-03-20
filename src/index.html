@@ -92,9 +92,10 @@
 </html>
 
 <script defer>
+    
     const array10k = Array.from({ length: 10000 }, () => Math.floor(Math.random() * 10000));
-    const array50k = Array.from({ length: 50000 }, () => Math.floor(Math.random() * 50000));
-    const array100k = Array.from({ length: 100000 }, () => Math.floor(Math.random() * 100000));
+    const array50k = Array.from({ length: 50000 }, () => Math.floor(Math.random() * 10000));
+    const array100k = Array.from({ length: 100000 }, () => Math.floor(Math.random() * 20000));
 
     // ALGORTIHTMS WERE WRITTEN WITH THE HELP OF https://www.geeksforgeeks.org/sorting-algorithms/ AND GITHUB COPILOT
     function bubbleSort(arr) {
@@ -234,65 +235,86 @@
         const selectArraySize = document.querySelector('#array-size');
         const btnRunProgram = document.querySelector('#run');
         const output = document.querySelector('#output');
+        let timeFor10k = 0;
+        let timeFor50k = 0;
+        let timeFor100k = 0;
         console.log(selectAlgorithm.value, selectArraySize.value);
             if (selectAlgorithm.value === 'Bubble Sort' && selectArraySize.value === '10k') {
-                output.innerHTML = `Array size: 10k <br> Bubble sort: ${measureSortRuntime(bubbleSort, array10k)} ms`;
-                bubble_sort_10k.innerHTML = `${measureSortRuntime(bubbleSort, array10k)} ms`;
+                timeFor10k = measureSortRuntime(bubbleSort, array10k);
+                output.innerHTML = `Array size: 10k <br> Bubble sort: ${timeFor10k} ms`;
+                bubble_sort_10k.innerHTML = `${timeFor10k} ms`;
             }else if (selectAlgorithm.value === 'Selection Sort' && selectArraySize.value === '10k') {
-                output.innerHTML = `Array size: 10k <br> Selection sort: ${measureSortRuntime(selectionSort, array10k)} ms`;
-                selection_sort_10k.innerHTML = `${measureSortRuntime(selectionSort, array10k)} ms`;
+                timeFor10k = measureSortRuntime(selectionSort, array10k);
+                output.innerHTML = `Array size: 10k <br> Selection sort: ${timeFor10k} ms`;
+                selection_sort_10k.innerHTML = `${timeFor10k} ms`;
             }else if (selectAlgorithm.value === 'Quick Sort' && selectArraySize.value === '10k') {
-                output.innerHTML = `Array size: 10k <br> Quick sort: ${measureSortRuntime(quickSort, array10k)} ms`;
-                quick_sort_10k.innerHTML = `${measureSortRuntime(quickSort, array10k)} ms`;
+                timeFor10k = measureSortRuntime(quickSort, array10k);
+                output.innerHTML = `Array size: 10k <br> Quick sort: ${timeFor10k} ms`;
+                quick_sort_10k.innerHTML = `${timeFor10k} ms`;
             }else if (selectAlgorithm.value === 'Insertion Sort' && selectArraySize.value === '10k') {
-                output.innerHTML = `Array size: 10k <br> Insertion sort: ${measureSortRuntime(insertionSort, array10k)} ms`;
-                insertion_sort_10k.innerHTML = `${measureSortRuntime(insertionSort, array10k)} ms`;
+                timeFor10k = measureSortRuntime(insertionSort, array10k);
+                output.innerHTML = `Array size: 10k <br> Insertion sort: ${timeFor10k} ms`;
+                insertion_sort_10k.innerHTML = `${timeFor10k} ms`;
             }else if (selectAlgorithm.value === 'Merge Sort' && selectArraySize.value === '10k') {
-                output.innerHTML = `Array size: 10k <br> Merge sort: ${measureSortRuntime(mergeSort, array10k)} ms`;
-                merge_sort_10k.innerHTML = `${measureSortRuntime(mergeSort, array10k)} ms`;
+                timeFor10k = measureSortRuntime(mergeSort, array10k);
+                output.innerHTML = `Array size: 10k <br> Merge sort: ${timeFor10k} ms`;
+                merge_sort_10k.innerHTML = `${timeFor10k} ms`;
             }else if (selectAlgorithm.value === 'Heap Sort' && selectArraySize.value === '10k') {
-                output.innerHTML = `Array size: 10k <br> Heap sort: ${measureSortRuntime(heapSort, array10k)} ms`;
-                heap_sort_10k.innerHTML = `${measureSortRuntime(heapSort, array10k)} ms`;
+                timeFor10k = measureSortRuntime(heapSort, array10k);
+                output.innerHTML = `Array size: 10k <br> Heap sort: ${timeFor10k} ms`;
+                heap_sort_10k.innerHTML = `${timeFor10k} ms`;
             }
             
             if (selectAlgorithm.value === 'Bubble Sort' && selectArraySize.value === '50k') {
-                output.innerHTML = `Array size: 50k <br> Bubble sort: ${measureSortRuntime(bubbleSort, array50k)} ms`;
-                bubble_sort_50k.innerHTML = `${measureSortRuntime(bubbleSort, array50k)} ms`;
+                timeFor50k = measureSortRuntime(bubbleSort, array50k);
+                output.innerHTML = `Array size: 50k <br> Bubble sort: ${timeFor50k} ms`;
+                bubble_sort_50k.innerHTML = `${timeFor50k} ms`;
             }else if (selectAlgorithm.value === 'Selection Sort' && selectArraySize.value === '50k') {
-                output.innerHTML = `Array size: 50k <br> Selection sort: ${measureSortRuntime(selectionSort, array50k)} ms`;
-                selection_sort_50k.innerHTML = `${measureSortRuntime(selectionSort, array50k)} ms`;
+                timeFor50k = measureSortRuntime(selectionSort, array50k);
+                output.innerHTML = `Array size: 50k <br> Selection sort: ${timeFor50k} ms`;
+                selection_sort_50k.innerHTML = `${timeFor50k} ms`;
             }else if (selectAlgorithm.value === 'Quick Sort' && selectArraySize.value === '50k') {
-                output.innerHTML = `Array size: 50k <br> Quick sort: ${measureSortRuntime(quickSort, array50k)} ms`;
-                quick_sort_50k.innerHTML = `${measureSortRuntime(quickSort, array50k)} ms`;
+                timeFor50k = measureSortRuntime(quickSort, array50k);
+                output.innerHTML = `Array size: 50k <br> Quick sort: ${timeFor50k} ms`;
+                quick_sort_50k.innerHTML = `${timeFor50k} ms`;
             }else if (selectAlgorithm.value === 'Insertion Sort' && selectArraySize.value === '50k') {
-                output.innerHTML = `Array size: 50k <br> Insertion sort: ${measureSortRuntime(insertionSort, array50k)} ms`;
-                insertion_sort_50k.innerHTML = `${measureSortRuntime(insertionSort, array50k)} ms`;
+                timeFor50k = measureSortRuntime(insertionSort, array50k);
+                output.innerHTML = `Array size: 50k <br> Insertion sort: ${timeFor50k} ms`;
+                insertion_sort_50k.innerHTML = `${timeFor50k} ms`;
             }else if (selectAlgorithm.value === 'Merge Sort' && selectArraySize.value === '50k') {
-                output.innerHTML = `Array size: 50k <br> Merge sort: ${measureSortRuntime(mergeSort, array50k)} ms`;
-                merge_sort_50k.innerHTML = `${measureSortRuntime(mergeSort, array50k)} ms`;
+                timeFor50k = measureSortRuntime(mergeSort, array50k);
+                output.innerHTML = `Array size: 50k <br> Merge sort: ${timeFor50k} ms`;
+                merge_sort_50k.innerHTML = `${timeFor50k} ms`;
             }else if (selectAlgorithm.value === 'Heap Sort' && selectArraySize.value === '50k') {
-                output.innerHTML = `Array size: 50k <br> Heap sort: ${measureSortRuntime(heapSort, array50k)} ms`;
-                heap_sort_50k.innerHTML = `${measureSortRuntime(heapSort, array50k)} ms`;
+                timeFor50k = measureSortRuntime(heapSort, array50k);
+                output.innerHTML = `Array size: 50k <br> Heap sort: ${timeFor50k} ms`;
+                heap_sort_50k.innerHTML = `${timeFor50k} ms`;
             }
 
             if (selectAlgorithm.value === 'Bubble Sort' && selectArraySize.value === '100k') {
-                output.innerHTML = `Array size: 100k <br> Bubble sort: ${measureSortRuntime(bubbleSort, array100k)} ms`;
-                bubble_sort_100k.innerHTML = `${measureSortRuntime(bubbleSort, array100k)} ms`;
+                timeFor100k = measureSortRuntime(bubbleSort, array100k);
+                output.innerHTML = `Array size: 100k <br> Bubble sort: ${timeFor100k} ms`;
+                bubble_sort_100k.innerHTML = `${timeFor100k} ms`;
             }else if (selectAlgorithm.value === 'Selection Sort' && selectArraySize.value === '100k') {
-                output.innerHTML = `Array size: 100k <br> Selection sort: ${measureSortRuntime(selectionSort, array100k)} ms`;
-                selection_sort_100k.innerHTML = `${measureSortRuntime(selectionSort, array100k)} ms`;
+                timeFor100k = measureSortRuntime(selectionSort, array100k);
+                output.innerHTML = `Array size: 100k <br> Selection sort: ${timeFor100k} ms`;
+                selection_sort_100k.innerHTML = `${timeFor100k} ms`;
             }else if (selectAlgorithm.value === 'Quick Sort' && selectArraySize.value === '100k') {
-                output.innerHTML = `Array size: 100k <br> Quick sort: ${measureSortRuntime(quickSort, array100k)} ms`;
-                quick_sort_100k.innerHTML = `${measureSortRuntime(quickSort, array100k)} ms`;
+                timeFor100k = measureSortRuntime(quickSort, array100k);
+                output.innerHTML = `Array size: 100k <br> Quick sort: ${timeFor100k} ms`;
+                quick_sort_100k.innerHTML = `${timeFor100k} ms`;
             }else if (selectAlgorithm.value === 'Insertion Sort' && selectArraySize.value === '100k') {
-                output.innerHTML = `Array size: 100k <br> Insertion sort: ${measureSortRuntime(insertionSort, array100k)} ms`;
-                insertion_sort_100k.innerHTML = `${measureSortRuntime(insertionSort, array100k)} ms`;
+                timeFor100k = measureSortRuntime(insertionSort, array100k);
+                output.innerHTML = `Array size: 100k <br> Insertion sort: ${timeFor100k} ms`;
+                insertion_sort_100k.innerHTML = `${timeFor100k} ms`;
             }else if (selectAlgorithm.value === 'Merge Sort' && selectArraySize.value === '100k') {
-                output.innerHTML = `Array size: 100k <br> Merge sort: ${measureSortRuntime(mergeSort, array100k)} ms`;
-                merge_sort_100k.innerHTML = `${measureSortRuntime(mergeSort, array100k)} ms`;
+                timeFor100k = measureSortRuntime(mergeSort, array100k);
+                output.innerHTML = `Array size: 100k <br> Merge sort: ${timeFor100k} ms`;
+                merge_sort_100k.innerHTML = `${timeFor100k} ms`;
             }else if (selectAlgorithm.value === 'Heap Sort' && selectArraySize.value === '100k') {
-                output.innerHTML = `Array size: 100k <br> Heap sort: ${measureSortRuntime(heapSort, array100k)} ms`;
-                heap_sort_100k.innerHTML = `${measureSortRuntime(heapSort, array100k)} ms`;
+                timeFor100k = measureSortRuntime(heapSort, array100k);
+                output.innerHTML = `Array size: 100k <br> Heap sort: ${timeFor100k} ms`;
+                heap_sort_100k.innerHTML = `${timeFor100k} ms`;
             }
 
 
